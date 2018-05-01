@@ -23,7 +23,7 @@ app.config["UP_DIR_MV"] = os.path.join(os.path.abspath(os.path.dirname(__file__)
 app.config["UP_DIR_MVLOGO"] = os.path.join(os.path.abspath(os.path.dirname(__file__)), "static/uploads/mv_logo/") #用于保存电影封面
 app.config["UP_DIR_PRLOGO"] = os.path.join(os.path.abspath(os.path.dirname(__file__)), "static/uploads/pr_logo/") #用于预告封面
 
-app.debug = True #(生产环境是False，开发环境是True)
+app.debug = True  # (生产环境是False，开发环境是True)
 db = SQLAlchemy(app)
 rd = FlaskRedis(app)
 
