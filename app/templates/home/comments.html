@@ -1,0 +1,57 @@
+{% extends "home/home.html" %}
+{% import "ui/home_page.html" as pg %}
+
+{% block content %}
+{% include "home/menu.html" %}
+<div class="col-md-9">
+    <div class="panel panel-warning">
+        <div class="panel-heading">
+            <h3 class="panel-title"><span class="glyphicon glyphicon-map-marker"></span>&nbsp;评论记录</h3>
+        </div>
+        <div class="panel-body">
+            <ul class="commentList">
+                {% for v in page_data.items %}
+                    <li class="item cl">
+                        <a>
+                            <i class="avatar size-L radius">
+                                {% if v.user.face %}
+                                <img alt="50x50" src="{{ url_for('static',filename='uploads/users/'+v.user.face) }}" class="img-circle"
+                                     style="border:1px solid #abcdef;width:50px;">
+                                {% else %}
+                                <img alt="50x50" data-src="holder.js/50x50" class="img-circle"
+                                     style="border:1px solid #abcdef;width:50px;">
+                                {% endif %}
+                            </i>
+                        </a>
+                        <div class="comment-main">
+                            <header class="comment-header">
+                                <div class="comment-meta">
+                                    <a class="comment-author" href="user.html">{{ v.user.name }}</a>
+                                    评论于
+                                    <time title="{{ v.addtime }}" datetime="{{ v.addtime }}">
+                                        {{ v.addtime }}
+                                    </time>
+                                </div>
+                            </header>
+                            <div class="comment-body">
+                                <p>{{ v.content | safe }}</p>
+                            </div>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+            <div class="col-md-12 text-center">
+                {{ pg.page(page_data,'home.comments') }}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}
+<script>
+    $(document).ready(function(){
+        $("#m-3").addClass("active");
+    });
+</script>
+{% endblock %}
