@@ -5,8 +5,10 @@ from app import app
 from flask_script import Manager
 
 #线上使用命令行启动
-manage = Manager(app)
+# manage = Manager(app)
 
 if __name__ == "__main__":
-    # app.run(debug=True, port=8000)
-    manage.run()
+    #本机启动
+    app.run(debug=True, port=8000)
+    #服务器启动
+    # manage.run()
