@@ -6,8 +6,8 @@
 
 相关部署请参考博客：
 
-1.环境搭建 http://www.listenlife.cn/post/43<br>
-2.部署项目 http://www.listenlife.cn/post/44
+1.环境搭建 http://listenlife.cn/post/43<br>
+2.部署项目 http://listenlife.cn/post/44
 
 ## 为什么使用Flask？Python web框架大对比
 
